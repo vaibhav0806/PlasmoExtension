@@ -1,7 +1,7 @@
+import "~style.css"
+
 import axios from "axios"
 import useSWR from "swr"
-
-import "~style.css"
 
 import { useEffect } from "react"
 
