@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import "~style.css"
 
@@ -13,36 +12,18 @@ function IndexPopup() {
     console.log(click)
   }
   return (
-    <>
-      <div style={{
-      width: "500px",
-      height: "500px",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      gap: "2rem",
-      backgroundColor: "#F0F0F0"
-    }}>
+      <div className="plasmo-w-[500px] plasmo-h-[500px] plasmo-flex plasmo-flex-col plasmo-justify-center plasmo-items-center plasmo-gap-[1rem] plasmo-bg-gray-200 plasmo-text-lg">
       {(click)? <LocationPicker setLoading={setLocationLoading}/> : ""}
-      <button 
-      onClick={changeClick}
-      style={{
-        backgroundColor: '#007BFF',
-        color: '#FFFFFF',
-        border: 'none',
-        borderRadius: '6px',
-        padding: '10px 20px',
-        fontSize: '1rem',
-        cursor: 'pointer',
-        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.1)',
-      }}
-      disabled={locationLoading}
+      <button
+        onClick={changeClick}
+        className={`plasmo-bg-blue-500 plasmo-text-white plasmo-rounded-md plasmo-px-8 plasmo-py-2 plasmo-text-lg plasmo-cursor-pointer plasmo-shadow-md ${
+          locationLoading ? "plasmo-opacity-80 plasmo-pointer-events-none" : ""
+        }`}
+        disabled={locationLoading}
       >
-        {locationLoading? "Loading..." :  "Show my location"}
+        {locationLoading ? "Loading..." : "Show my location"}
       </button>
     </div>
-    </>
   )
 }
 
